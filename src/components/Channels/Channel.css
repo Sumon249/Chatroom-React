@@ -1,0 +1,27 @@
+.channel-pane{
+    display: flex;
+    justify-content: space-around;
+    border-radius: 60px;
+    padding: 1rem 3rem;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border: 3px solid #AB92BF;
+
+}
+
+.channel-img{
+    width: 80px;
+    border-radius: 100%;
+    aspect-ratio: 1;
+}
+.channel-container{
+    /* aspect-ratio: 1; */
+    border-radius: 60px;
+    background-color: aliceblue;
+    box-shadow: 0 0 8px 3px rgb(192, 190, 190);
+
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    padding-inline: 2rem;
+}

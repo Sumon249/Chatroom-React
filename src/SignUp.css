@@ -1,0 +1,26 @@
+.signup-wrapper{
+    /* width: 100%; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-inline: auto; */
+
+}
+.signup-page{
+    border-radius: 60px;
+    margin-inline: auto;
+    background-color: white;
+    color: black;
+    padding: 4rem;
+    text-align: center  ;
+
+    font-size: 14px;
+}
+
+.signup-btn{
+    background: none;
+    border: none;
+    /* box-shadow: 0 0 5px 2px rgb(54, 138, 249); */
+    margin: 1rem 0;
+}

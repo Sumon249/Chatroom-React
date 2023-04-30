@@ -1,0 +1,9 @@
+.settings-pane{
+    background-color:white;
+    border-radius: 60px;
+    text-align: center;
+    display: grid;
+    place-content: center;
+    border: 3px solid #AB92BF;
+
+}
