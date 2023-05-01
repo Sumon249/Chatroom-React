@@ -83,3 +83,6 @@ input,
 textarea{
   font-family: inherit;
 }
+button{
+  cursor: pointer;
+}

@@ -20,7 +20,7 @@
 
 .signup-btn{
     background: none;
-    border: none;
+    border: 1px solid gray  ;
     /* box-shadow: 0 0 5px 2px rgb(54, 138, 249); */
     margin: 1rem 0;
 }

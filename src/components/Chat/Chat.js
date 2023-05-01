@@ -3,7 +3,7 @@ import { auth } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 const Chat = ({ message }) => {
     const [user] = useAuthState(auth);
-    console.log(user.uid);
+    // console.log(user.uid);
     return (
         <div className={message.uid === user.uid ? "text text-send" : "text text-recieve"}>
             <img

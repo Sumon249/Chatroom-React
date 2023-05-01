@@ -4,14 +4,13 @@ import ChatWindow from './ChatWindow';
 import TypingWindow from './TypingWindow';
 import "./Chat.css"
 
-const ChatWrapper = () => {
+const ChatWrapper = ({chatroom}) => {
     const scroll = useRef();
+    // console.log("CHAT WRAPPER" + chatroom);
 
     return ( 
         <div className='chat-pane'>
-            <ChatWindow></ChatWindow>
-            <span ref={scroll}></span>
-            <TypingWindow scroll = {scroll}></TypingWindow>
+            <ChatWindow currChatroom = {chatroom}></ChatWindow>
         </div>
      );
 }

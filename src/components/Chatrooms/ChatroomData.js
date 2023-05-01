@@ -2,7 +2,7 @@
 export default [
     {
         id: 1,
-        name: "Sports",
+        name: "cricket",
         imgUrl: "/images/chatroom/cricket.jpg",
     },
     {
