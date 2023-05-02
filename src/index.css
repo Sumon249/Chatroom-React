@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
 :root {
+
   /* colors */
   --clr-dark: 59, 0%, 5%;
   --clr-light: 15, 50%, 97%;
@@ -17,7 +18,7 @@
 
   /* font-families */
   --ff-serif: "Bellefair", serif;
-  --ff-sans-cond: "Barlow Condensed", sans-serif;
+  --ff-sans-secondary: "Roboto", sans-serif;
   --ff-sans-normal: "Montserrat", sans-serif;
 }
 
@@ -26,7 +27,29 @@
 *::after {
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  /* width: 1px; */
+  /* border-radius: 60px; */
+  width: 10px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 body,
 h1,
 h2,
@@ -53,7 +76,7 @@ p {
 body {
   font-family: var(--ff-sans-normal);
   font-size: var(--fs-500);
-  background-color: #dcfaf5;
+  background-color: #F2EFE5;
   color: hsl(var(--clr-white));
   line-height: 1.6;
   min-height: 100vh;
@@ -82,6 +105,7 @@ button,
 input,
 textarea{
   font-family: inherit;
+  font-size: inherit;
 }
 button{
   cursor: pointer;

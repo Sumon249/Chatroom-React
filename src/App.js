@@ -10,6 +10,7 @@ import Settings from './components/Settings/Settings';
 import ChatroomWindow from './ChatroomWindow';
 import SignUp from './SignUp';
 
+
 function App() {
   const [user] = useAuthState(auth);
   return (

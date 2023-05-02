@@ -2,10 +2,10 @@ import React from 'react'
 
 const Channel = ({channelName, imgURL}) => {
     return ( 
-        <div className="channel-container">
+        <button className="channel-container">
             <img src={imgURL} className = "channel-img" alt="" />
-            <p>{channelName}</p>
-        </div>
+            <p className='channel-name'>{channelName}</p>
+        </button>
      );
 }
  

@@ -32,9 +32,11 @@ const TypingWindow = ({scroll, currChatroom}) => {
         scroll.current.scrollIntoView({ behavior: "smooth" });
       };
     return ( 
-        <form className='typing-window' onSubmit={(event) => sendMessage(event)}>
-            <input id = "text-input" name = "text-input" type="text" onChange={(e) => setMessage(e.target.value)} value = {message}/>
-            <button type = "submit">Send</button>
+        <form className='typing-window' onSubmit={(event) => sendMessage(event)} autoComplete = "off">
+            <input placeholder = "Message" id = "text-input" name = "text-input" type="text" onChange={(e) => setMessage(e.target.value)} autoFocus value = {message}/>
+            <button type = "submit" className='submit-btn'>
+            <img src="images/send-white.png" alt="" className='send-img' />
+            </button>
         </form>
      );
 }

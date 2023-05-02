@@ -5,6 +5,8 @@
     justify-content: center;
     align-items: center;
     /* margin-inline: auto; */
+    background: url("./5328478.jpg");
+    background-size: cover;
 
 }
 .signup-page{
@@ -14,13 +16,18 @@
     color: black;
     padding: 4rem;
     text-align: center  ;
-
+    width: 40%;
     font-size: 14px;
+}
+.signup-img{
+    width: 50%;
+    /* text-align: center; */
+    margin-inline: auto;
 }
 
 .signup-btn{
     background: none;
-    border: 1px solid gray  ;
+    border: none;
     /* box-shadow: 0 0 5px 2px rgb(54, 138, 249); */
     margin: 1rem 0;
 }

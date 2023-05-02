@@ -4,6 +4,14 @@
     text-align: center;
     display: grid;
     place-content: center;
-    border: 3px solid #AB92BF;
+    /* border: 3px solid #AB92BF; */
 
+}
+.signout-btn{
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    /* box-shadow: 0 3px 3px 1px rgb(188, 185, 185); */
 }

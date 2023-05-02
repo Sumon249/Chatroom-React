@@ -6,22 +6,35 @@
     background-color: white;
     color: black;
     text-align: center;
-    border: 3px solid #AB92BF;
+    /* border: 3px solid #AB92BF; */
+    overflow: auto;
 
 }
 
 .channel-img{
     width: 80px;
-    border-radius: 100%;
+    margin-bottom: 5px;
+    border-radius: 60%;
     aspect-ratio: 1;
 }
 .channel-container{
     /* aspect-ratio: 1; */
-    border-radius: 60px;
-    background-color: aliceblue;
-    box-shadow: 0 0 8px 3px rgb(192, 190, 190);
+    border-radius: 30px;
+    /* box-shadow: 0 0 8px 3px rgb(192, 190, 190); */
 
-    padding-top: 1.5rem;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
+    /* padding-bottom: 0.5rem; */
     padding-inline: 2rem;
+    border: none;
+    margin-right: min(1.4rem);
+    transition: background-color 0.1s linear;
+}
+.channel-container:hover{
+    background-color: rgb(208, 208, 208);
+}
+.channel-name{
+    font-size: 16px;
+
+    font-weight: 500;
+
 }

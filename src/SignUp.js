@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { auth, db } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
-import GoogleSignIn from "./btn_google_signin_light_normal_web.png"
+import GoogleSignIn from "./btn_google_signin_dark_normal_web_2x-ew2kGNDJd-transformed.png"
 import "./SignUp.css"
 import { addDoc, collection } from 'firebase/firestore';
 
@@ -47,6 +47,7 @@ const SignUp = () => {
               onClick={googleSignIn}
               src={GoogleSignIn}
               alt="sign in with google"
+              className='signup-img'
               type="button"
             />
           </button>

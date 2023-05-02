@@ -6,7 +6,7 @@
     overflow-y: scroll;
     padding: 2rem;
     width: 100%;
-    border: 3px solid #AB92BF;
+    /* border: 3px solid #AB92BF; */
 }
 
 .typing-window{
@@ -15,6 +15,8 @@
     padding: 1rem 0;
     width: 100%;
     display: flex;
+    font-size: 16px;
+    gap: 1rem;
 
 
 }
@@ -22,9 +24,13 @@
     border-radius: 60px;
     padding: 1rem 2rem;
     width: 100%;
-    border: 3px solid #AB92BF;
+    border: none;
 
 }
+.typing-window >input:focus{
+    outline: 3px solid #1996ea;
+}
+
 
 .text {
     padding: 1rem 1.5rem;
@@ -55,4 +61,20 @@
 .text-recieve {
     text-align: left;
     background-color: #1996ea;
+}
+.submit-btn{
+    /* background: none; */
+    background-color: #1996ea;
+    border-radius: 100%;
+    aspect-ratio: 1;
+    width: 50px;
+    text-align: center;
+    border: none;
+}
+.send-img{
+    height: 20px;
+    width: 20px;
+    /* color: white; */
+    margin-inline: auto;
+    /* aspect-ratio: 1; */
 }

@@ -2,7 +2,7 @@
 export default [
     {
         id: 1,
-        name: "cricket",
+        name: "Cricket",
         imgUrl: "/images/chatroom/cricket.jpg",
     },
     {
@@ -19,7 +19,13 @@ export default [
         id: 4,
         name: "Tennis",
         imgUrl: "/images/chatroom/football.jpg",
-    }
+    },
+    {
+        id: 5,
+        name: "Tennis",
+        imgUrl: "/images/chatroom/football.jpg",
+    },
+
 ];
 
 

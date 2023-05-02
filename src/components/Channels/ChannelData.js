@@ -13,4 +13,16 @@ export default [
         channelName: "Books",
         imgURL: "/images/channel/books.jpeg",
     },
-];
+    {
+        channelName: "Sports",
+        imgURL: "/images/channel/food.jpg",
+    },
+    {
+        channelName: "Books",
+        imgURL: "/images/channel/books.jpeg",
+    },
+    {
+        channelName: "Movies",
+        imgURL: "/images/channel/movies.jpeg",
+    },
+]
