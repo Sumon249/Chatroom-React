@@ -12,12 +12,24 @@ const ChatroomData = () => {
     const chatrooms = [
       { name: "Cricket", imgUrl: "/images/chatroom/cricket.jpg", fromChannel: "Sports" },
       { name: "Football", imgUrl: "/images/chatroom/football.jpg", fromChannel: "Sports"  },
-      { name: "Hockey", imgUrl: "/images/chatroom/cricket.jpg", fromChannel: "Sports"  },
-      { name: "Tennis", imgUrl: "/images/chatroom/football.jpg", fromChannel: "Sports"  },
+      { name: "Hockey", imgUrl: "/images/chatroom/hockey.jpg", fromChannel: "Sports"  },
+      { name: "Tennis", imgUrl: "/images/chatroom/tennis.jpg", fromChannel: "Sports"  },
       { name: "Italian", imgUrl: "/images/chatroom/italian.jpg", fromChannel: "Food" },
       { name: "Indian", imgUrl: "/images/chatroom/indian.jpg", fromChannel: "Food"  },
       { name: "Mexican", imgUrl: "/images/chatroom/mexican.jpg", fromChannel: "Food"  },
       { name: "Chinese", imgUrl: "/images/chatroom/chinese.jpg", fromChannel: "Food"  },
+      { name: "Romance", imgUrl: "/images/chatroom/romance.jpg", fromChannel: "Books"  },
+      { name: "Biography", imgUrl: "/images/chatroom/bio.jpg", fromChannel: "Books"  },
+      { name: "Mystery", imgUrl: "/images/chatroom/mystery.jpg", fromChannel: "Books"  },
+      { name: "Science Fiction", imgUrl: "/images/chatroom/scifi.jpg", fromChannel: "Books"  },
+      { name: "Romance", imgUrl: "/images/chatroom/rom.jpg", fromChannel: "Movies"  },
+      { name: "Horror", imgUrl: "/images/chatroom/horror.jpg", fromChannel: "Movies"  },
+      { name: "Mystery", imgUrl: "/images/chatroom/mys.jpg", fromChannel: "Movies"  },
+      { name: "Comedy", imgUrl: "/images/chatroom/comedy.jpg", fromChannel: "Movies"  },
+      { name: "Art", imgUrl: "/images/chatroom/art.jpg", fromChannel: "Fine Arts"  },
+      { name: "Music", imgUrl: "/images/chatroom/music.jpg", fromChannel: "Fine Arts"  },
+      { name: "Dance", imgUrl: "/images/chatroom/dance.jpg", fromChannel: "Fine Arts"  },
+      { name: "Theatre", imgUrl: "/images/chatroom/theatre.jpg", fromChannel: "Fine Arts"  },
     ];
 
     // Create a reference to the chatroom collection in Firestore

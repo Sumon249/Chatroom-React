@@ -15,14 +15,10 @@ export default [
     },
     {
         channelName: "Sports",
-        imgURL: "/images/channel/food.jpg",
+        imgURL: "/images/channel/sports.jpg",
     },
     {
-        channelName: "Books",
-        imgURL: "/images/channel/books.jpeg",
-    },
-    {
-        channelName: "Movies",
-        imgURL: "/images/channel/movies.jpeg",
+        channelName: "Fine Arts",
+        imgURL: "/images/channel/finearts.jpg",
     },
 ]
