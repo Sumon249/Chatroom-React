@@ -3,16 +3,19 @@ import { useState, useEffect } from 'react'
 
 import { auth, db } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { GoogleAuthProvider, signInWithPopup, signInWithRedirect } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import GoogleSignIn from "./btn_google_signin_dark_normal_web_2x-ew2kGNDJd-transformed.png"
 import "./SignUp.css"
-import { doc, addDoc, collection, query, setDoc, Timestamp, where } from 'firebase/firestore';
-import { FormControl, RadioGroup, FormLabel, FormControlLabel, Radio } from '@mui/material';
+import { doc, setDoc,  } from 'firebase/firestore';
+import { FormControl, RadioGroup, FormControlLabel, Radio } from '@mui/material';
 
 const SignUp = () => {
 
   const [user] = useAuthState(auth);
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState(() => {
+    const storedRole = localStorage.getItem("role");
+    return storedRole !== null ? storedRole : "user";
+  });
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
@@ -56,7 +59,8 @@ const SignUp = () => {
 
 
   const handleRoleChange = (event) => {
-    setRole(event.target.value);
+        localStorage.setItem("role", event.target.value);
+        setRole(event.target.value);
   }
   return (
     <div className="signup-wrapper">

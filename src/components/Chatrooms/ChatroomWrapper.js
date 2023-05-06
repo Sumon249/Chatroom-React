@@ -14,7 +14,8 @@ import {
     limit,
     where
 } from "firebase/firestore";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { db } from "../../firebase";
 import { getFirestore } from 'firebase/firestore'
 
@@ -55,10 +56,21 @@ const ChatroomWrapper = ({onChatroomChange, channel}) => {
         });
         return () => unsubscribe;
     }, [currChannel]);
+
+    const addChatroom = () =>{
+        
+    }
+
     return ( 
     <div className='chatroom-pane'>
         <ChatroomData />
-        <p className='chatroom-title'>Chatrooms</p>
+        <div className='chatroom-header'>
+            <p className='chatroom-title'>Chatrooms</p>
+            <button onClick={addChatroom}>
+            <FontAwesomeIcon icon={faPlus} />
+
+            </button>
+        </div>
         {chatrooms.map((chatroom) => 
             <Chatroom name = {chatroom.name} imgURL={chatroom.imgUrl} onChatroomChange = {changeChatroom}></Chatroom>
             

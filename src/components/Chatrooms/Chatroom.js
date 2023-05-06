@@ -6,7 +6,7 @@ import { auth } from "../../firebase";
 import { db } from "../../firebase"; // Import your Firebase app instance
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { collection, query, doc, where, getDoc, getDocs, addDoc ,setDoc, onSnapshot} from "firebase/firestore";
+import { collection,deleteDoc, query, doc, where, getDoc, getDocs, addDoc ,setDoc, onSnapshot} from "firebase/firestore";
 
 
 
@@ -32,15 +32,34 @@ const Chatroom = ({name, imgURL, onChatroomChange}) =>{
     const changeChatroomHandler = (e) => {
         onChatroomChange(name)
     }
-    return(
-        <>
-        <Button className='chatroom-container' onClick={changeChatroomHandler}>
-            <img src={imgURL} className = "chatroom-img" alt="" />
-            <p className = "chatroom-btn">{name}</p>
-        {role === "admin"?<button className = "delete-chatroom" type=""><FontAwesomeIcon className = "fa-trash" icon={faTrash} /></button>:<></>}
 
-        </Button>
-        </>
+    const deleteChatroom = async () => {
+        try {
+            const usersRef = collection(db, "chatrooms");
+            const q = query(usersRef, where("name", "==", name));
+            const querySnapshot = await getDocs(q);
+            if (!querySnapshot.empty) {
+              querySnapshot.forEach((doc) => {
+                deleteDoc(doc.ref);
+              });
+              console.log(`Deleted Chatroom  with name '${name}'`);
+            } else {
+              console.log(`Chatroom with name '${name}' not found`);
+            }
+          } catch (error) {
+            console.error("Error deleting Chatroom from Firestore:", error);
+          }
+    }
+
+    return(
+        <div style = {{display: 'flex', marginInline: '15px'}}>
+            <button className='chatroom-container' onClick={changeChatroomHandler}>
+                <img src={imgURL} className = "chatroom-img" alt="" />
+                <p className = "chatroom-btn">{name}</p>
+            </button>
+            {role === "admin"?<button onClick = {deleteChatroom} className = "delete-chatroom" type=""><FontAwesomeIcon className = "fa-trash" icon={faTrash} /></button>:<></>}
+
+        </div>
 
     )
 };

@@ -19,16 +19,25 @@
     border-radius: 60px;
     margin-inline: auto;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     gap: 1.5rem;    
     width: 90%;
+    text-align: left;
+    margin-inline: auto;
+    /* background-color: red; */
     
 
 }
-
+.chatroom-header{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .chatroom-title{
-    font-size: 25px
+    font-size: 25px;
+    margin-inline: 20px;
 }
 .chatroom-img{
     width: 55px;
@@ -56,6 +65,6 @@
 
 .fa-trash:hover{
     /* width: 15px; */
-    color: rgb(254, 58, 58);
+    color: rgb(245, 56, 56);
     /* background-color: red; */
 }
