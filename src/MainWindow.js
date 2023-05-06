@@ -4,21 +4,23 @@ import ChatroomWrapper from './components/Chatrooms/ChatroomWrapper';
 import ChannelWrapper from './components/Channels/ChannelWrapper';
 import ChatWrapper from './components/Chat/ChatWrapper';
 import Settings from './components/Settings/Settings';
-const ChatroomWindow = (onChatroomChange) => {
+const ChatroomWindow = (onChatroomChange, onChannelChange) => {
   const [currChatroom, setCurrChatroom] = useState('');
+  const [currChannel, setCurrChannel] = useState('');
 
   const handleChatroomChange = (chatroom) => {
     setCurrChatroom(chatroom);
-    // console.log("CHATROOM WINDOW" + chatroom);
   };
 
+  const handleChannelChange = (channel) => {
+    setCurrChannel(channel);
+  }
   return (
     <div className='chatroom-window'>
 
-         <Settings></Settings>
-        <ChannelWrapper></ChannelWrapper>
-
-        <ChatroomWrapper onChatroomChange={handleChatroomChange}></ChatroomWrapper>
+        <Settings></Settings>
+        <ChannelWrapper onChannelChange = {handleChannelChange}></ChannelWrapper>
+        <ChatroomWrapper onChatroomChange={handleChatroomChange} channel = {currChannel}></ChatroomWrapper>
         <ChatWrapper chatroom = {currChatroom}></ChatWrapper> 
 
       </div>

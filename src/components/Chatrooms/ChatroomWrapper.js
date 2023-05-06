@@ -1,7 +1,10 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import Chatroom from './Chatroom';
-// import chatrooms from './ChatroomData';
+// import Chatroom from './ChatroomData';
+import ChatroomData from './ChatroomData';
+// import "./ChatroomData"
+
 import './Chatroom.css'
 import {
     query,
@@ -15,22 +18,33 @@ import {
 import { db } from "../../firebase";
 import { getFirestore } from 'firebase/firestore'
 
-const ChatroomWrapper = ({onChatroomChange}) => {
+const ChatroomWrapper = ({onChatroomChange, channel}) => {
     const [currChatroom, setCurrChatroom] = useState("")
+    const [chatrooms, setChatrooms] = useState([]);
+    const [currChannel, setCurrChannel] = useState("Sports");
 
     const changeChatroom = (chatroom) =>{
         setCurrChatroom(chatroom);
         onChatroomChange(chatroom);
         // console.log("CHATROMM_WRAPPER" + chatroom);
     }
-    const [chatrooms, setChatrooms] = useState([]);
-    const [channel, setChannel] = useState("sports");
+
+    useEffect(() =>{
+        const fetchMessages = async () =>{
+            setCurrChannel(channel);
+        }
+        fetchMessages();
+    },[channel])
+
+    console.log(currChannel);
+
     useEffect(() => {
         const q = query(
-            collection(db, "chatroom"),
-            orderBy("createdAt"),
-            // where("fromChannel", "==", channel),
+            collection(db, "chatrooms"),
+            // orderBy("fromChannel"),
+            where("fromChannel", "==", currChannel),
             limit(50)
+
         );
         const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
             let chatrooms = [];
@@ -40,13 +54,13 @@ const ChatroomWrapper = ({onChatroomChange}) => {
             setChatrooms(chatrooms);
         });
         return () => unsubscribe;
-    },[]);
-    console.log("YOO" + chatrooms);
+    }, [currChannel]);
     return ( 
     <div className='chatroom-pane'>
+        <ChatroomData />
         <p className='chatroom-title'>Chatrooms</p>
-        {chatrooms.map(chatroom => 
-            <Chatroom currChatroom = {chatroom} imgURL={chatroom.imgUrl} onChatroomChange = {changeChatroom}></Chatroom>
+        {chatrooms.map((chatroom) => 
+            <Chatroom name = {chatroom.name} imgURL={chatroom.imgUrl} onChatroomChange = {changeChatroom}></Chatroom>
             
         )}
     </div>

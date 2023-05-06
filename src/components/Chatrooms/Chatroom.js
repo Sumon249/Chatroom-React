@@ -2,15 +2,16 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import { Button } from '@mui/base';
 
-const Chatroom = ({chatroom, imgURL, onChatroomChange}) =>{
+const Chatroom = ({name, imgURL, onChatroomChange}) =>{
 
     const changeChatroomHandler = (e) => {
-        onChatroomChange(chatroom.name)
+        onChatroomChange(name)
+
     }
     return(
         <Button className='chatroom-container' onClick={changeChatroomHandler}>
             <img src={imgURL} className = "chatroom-img" alt="" />
-            <p class = "chatroom-btn">{chatroom.name}</p>
+            <p className = "chatroom-btn">{name}</p>
         </Button>
     )
 };

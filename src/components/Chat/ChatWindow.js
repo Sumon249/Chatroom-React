@@ -18,12 +18,14 @@ import { getFirestore } from 'firebase/firestore'
 const ChatWindow = ({currChatroom}) => {
     const [messages, setMessages] = useState([]);
     const [chatroom, setChatroom] = useState("");
+
     useEffect(() =>{
         const fetchMessages = async () =>{
             setChatroom(currChatroom);
         }
         fetchMessages();
     },[currChatroom])
+    
     // console.log("CHAT WINDOW" + chatroom);
     useEffect(() => {
         const q = query(
