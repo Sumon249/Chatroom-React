@@ -21,7 +21,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.5rem;    
+    width: 90%;
     
 
 }
@@ -45,4 +46,16 @@
 }
 .chatroom-container:hover{
     color: #1996ea;
+}
+
+.delete-chatroom{
+    background: none;
+    border: none;
+    
+}
+
+.fa-trash:hover{
+    /* width: 15px; */
+    color: rgb(254, 58, 58);
+    /* background-color: red; */
 }

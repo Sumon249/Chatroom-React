@@ -4,21 +4,21 @@ import { collection, query, doc, where, getDocs, addDoc ,setDoc } from "firebase
 import { useEffect } from "react";
 const ChatroomData = () => {
 
-  const chatrooms = [
-    { name: "Cricket", imgUrl: "/images/chatroom/cricket.jpg", fromChannel: "Sports" },
-    { name: "Football", imgUrl: "/images/chatroom/football.jpg", fromChannel: "Sports"  },
-    { name: "Hockey", imgUrl: "/images/chatroom/cricket.jpg", fromChannel: "Sports"  },
-    { name: "Tennis", imgUrl: "/images/chatroom/football.jpg", fromChannel: "Sports"  },
-    { name: "Italian", imgUrl: "/images/chatroom/italian.jpg", fromChannel: "Food" },
-    { name: "Indian", imgUrl: "/images/chatroom/indian.jpg", fromChannel: "Food"  },
-    { name: "Mexican", imgUrl: "/images/chatroom/mexican.jpg", fromChannel: "Food"  },
-    { name: "Chinese", imgUrl: "/images/chatroom/chinese.jpg", fromChannel: "Food"  },
-  ];
+
   
   useEffect(() => {
     // Define the chatrooms to add
    
-  
+    const chatrooms = [
+      { name: "Cricket", imgUrl: "/images/chatroom/cricket.jpg", fromChannel: "Sports" },
+      { name: "Football", imgUrl: "/images/chatroom/football.jpg", fromChannel: "Sports"  },
+      { name: "Hockey", imgUrl: "/images/chatroom/cricket.jpg", fromChannel: "Sports"  },
+      { name: "Tennis", imgUrl: "/images/chatroom/football.jpg", fromChannel: "Sports"  },
+      { name: "Italian", imgUrl: "/images/chatroom/italian.jpg", fromChannel: "Food" },
+      { name: "Indian", imgUrl: "/images/chatroom/indian.jpg", fromChannel: "Food"  },
+      { name: "Mexican", imgUrl: "/images/chatroom/mexican.jpg", fromChannel: "Food"  },
+      { name: "Chinese", imgUrl: "/images/chatroom/chinese.jpg", fromChannel: "Food"  },
+    ];
 
     // Create a reference to the chatroom collection in Firestore
     const chatroomCollectionRef = collection(db, "chatrooms");
@@ -41,7 +41,7 @@ const ChatroomData = () => {
         }
      
     });
-  }, [chatrooms]);
+  }, []);
 
   // Render the chatroom component
   return null;
