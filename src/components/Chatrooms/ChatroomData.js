@@ -32,6 +32,10 @@ const ChatroomData = () => {
       { name: "Theatre", imgUrl: "/images/chatroom/theatre.jpg", fromChannel: "Fine Arts"  },
     ];
 
+
+
+
+
     // Create a reference to the chatroom collection in Firestore
     const chatroomCollectionRef = collection(db, "chatrooms");
 
@@ -50,8 +54,7 @@ const ChatroomData = () => {
               fromChannel: chatroom.fromChannel,
               imgUrl: chatroom.imgUrl
             });
-        }
-     
+        }    
     });
   }, []);
 

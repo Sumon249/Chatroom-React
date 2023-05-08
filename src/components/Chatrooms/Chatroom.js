@@ -10,9 +10,10 @@ import { collection,deleteDoc, query, doc, where, getDoc, getDocs, addDoc ,setDo
 
 
 
-const Chatroom = ({name, imgURL, onChatroomChange}) =>{
+const Chatroom = ({name, imgURL, onChatroomChange, selected}) =>{
     const [user] = useAuthState(auth);
     const [role, setRole] = useState("user")
+    const [selectedChatroom, setSelectedChatroom] = useState("")
     const chatroomCollectionRef = collection(db, "users");
 
     useEffect(() => {
@@ -30,7 +31,8 @@ const Chatroom = ({name, imgURL, onChatroomChange}) =>{
     
     
     const changeChatroomHandler = (e) => {
-        onChatroomChange(name)
+        onChatroomChange(name);
+        setSelectedChatroom(name);
     }
 
     const deleteChatroom = async () => {
@@ -52,8 +54,8 @@ const Chatroom = ({name, imgURL, onChatroomChange}) =>{
     }
 
     return(
-        <div style = {{display: 'flex', marginInline: '15px'}}>
-            <button className='chatroom-container' onClick={changeChatroomHandler}>
+        <div className={selected? "selected-chatroom chatroom-box": "chatroom-box"} style = {{display: 'flex', marginInline: '15px'}}>
+            <button className='chatroom-container'  onClick={changeChatroomHandler} >
                 <img src={imgURL} className = "chatroom-img" alt="" />
                 <p className = "chatroom-btn">{name}</p>
             </button>

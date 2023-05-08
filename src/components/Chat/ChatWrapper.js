@@ -5,11 +5,11 @@ import TypingWindow from './TypingWindow';
 import "./Chat.css"
 
 const ChatWrapper = ({chatroom}) => {
-    const scroll = useRef();
     // console.log("CHAT WRAPPER" + chatroom);
 
     return ( 
         <div className='chat-pane'>
+            
             <ChatWindow currChatroom = {chatroom}></ChatWindow>
         </div>
      );

@@ -13,7 +13,7 @@ const ChannelWrapper = ({onChannelChange}) => {
     return (
         <div className="channel-pane">
             {channels.map(channel => 
-                <Channel channelName={channel.channelName} imgURL = {channel.imgURL} onChannelChange = {changeChannel}></Channel>
+                <Channel channelName={channel.channelName} imgURL = {channel.imgURL} onChannelChange = {changeChannel} selected = {channel.channelName === currentChannel?true:false}></Channel>
             )}
         </div>
     );

@@ -1,12 +1,12 @@
 import React from 'react'
 import { useState } from 'react';
 
-const Channel = ({channelName, imgURL, onChannelChange}) => {
+const Channel = ({channelName, imgURL, onChannelChange, selected}) => {
     const channelChangeHandler = () => {
         onChannelChange(channelName)
     }
     return ( 
-        <button className="channel-container" onClick = {channelChangeHandler}>
+        <button className={selected? "channel-container selected-channel": "channel-container"} onClick = {channelChangeHandler}>
             <img src={imgURL} className = "channel-img" alt="" />
             <p className='channel-name'>{channelName}</p>
         </button>

@@ -38,3 +38,8 @@
     font-weight: 500;
 
 }
+
+.selected-channel{
+    background-color: rgb(149, 149, 149);
+
+}

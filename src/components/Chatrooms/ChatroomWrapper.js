@@ -14,6 +14,7 @@ import {
     limit,
     where
 } from "firebase/firestore";
+import { Modal, Box, TextField } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { db } from "../../firebase";
@@ -23,6 +24,20 @@ const ChatroomWrapper = ({onChatroomChange, channel}) => {
     const [currChatroom, setCurrChatroom] = useState("")
     const [chatrooms, setChatrooms] = useState([]);
     const [currChannel, setCurrChannel] = useState("Sports");
+    const [open, setOpen] = useState(false)
+
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        bgcolor: 'background.paper',
+        border: '2px solid #000',
+        boxShadow: 24,
+        textAlign: 'center',
+        p: 4,
+      };
 
     const changeChatroom = (chatroom) =>{
         setCurrChatroom(chatroom);
@@ -58,7 +73,10 @@ const ChatroomWrapper = ({onChatroomChange, channel}) => {
     }, [currChannel]);
 
     const addChatroom = () =>{
-        
+        setOpen(true);
+    }
+    const handleClose = () => {
+        setOpen(false);
     }
 
     return ( 
@@ -70,9 +88,19 @@ const ChatroomWrapper = ({onChatroomChange, channel}) => {
             <FontAwesomeIcon icon={faPlus} />
 
             </button>
+            {/* <Modal open = {open} onClose = {handleClose}>
+                <Box sx = {style}>
+                    <h3 className='modal-header'>Enter Chatroom Details</h3>
+                    <form action="">
+                        <input type="text"placeholder='Chatroom Name' />
+                        <input type="image" src="" alt="" />
+                    </form>
+
+                </Box>
+            </Modal> */}
         </div>
         {chatrooms.map((chatroom) => 
-            <Chatroom name = {chatroom.name} imgURL={chatroom.imgUrl} onChatroomChange = {changeChatroom}></Chatroom>
+            <Chatroom name = {chatroom.name} imgURL={chatroom.imgUrl} onChatroomChange = {changeChatroom}  selected = {chatroom.name === currChatroom? true: false}></Chatroom>
             
         )}
     </div>

@@ -15,7 +15,7 @@
 .chatroom-container{
     border: none;
     font-family: var(--ff-sans-primary);
-    background-color: white;
+    background-color: inherit;
     border-radius: 60px;
     margin-inline: auto;
     display: flex;
@@ -67,4 +67,16 @@
     /* width: 15px; */
     color: rgb(245, 56, 56);
     /* background-color: red; */
+}
+
+.selected-chatroom{
+    background-color: rgb(226, 220, 220);
+    border-radius: 10px;
+}
+.chatroom-box{
+    padding: 10px 0;
+
+}
+.modal-header{
+    color: black;
 }
